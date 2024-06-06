@@ -1,4 +1,4 @@
-from cgi import parse_qs
+from urllib.parse import parse_qs
 from template import html
 import matplotlib.pyplot as plt
 
@@ -26,7 +26,7 @@ def application(environ, start_response):
             fig = plt.figure()
             graph = plt.plot(x, y)
             plt.grid()
-            fig.savefig('./image/graph.png')
+            fig.savefig('./img/graph.png')
         response_body = html
         start_response('200 OK', [
             ('Content-Type', 'text/html'),
